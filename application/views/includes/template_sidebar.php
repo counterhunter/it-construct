@@ -15,43 +15,14 @@
 	<section class="news">
 		<h2 class="sidebar__headline news__headline">Новости</h2>
 		<ul class="news-list">
-			<li class="news-item">
-				<a class="news-item__link" href="#">
-					Поздравительная речь президента международной корпорации Хуа Шэн господина Ли Вея в Международный...
-				</a>
-				<span class="news-item__date">2010-03-03</span>
-			</li>
-			<li class="news-item">
-				<a class="news-item__link" href="#">
-					Собрание правления киевского филиала
-				</a>
-				<span class="news-item__date">2010-02-27</span>
-			</li>
-			<li class="news-item">
-				<a class="news-item__link" href="#">
-					Петропавловскому офису международной корпорации Хуа Шен исполнился 1 год
-				</a>
-				<span class="news-item__date">2010-02-23</span>
-			</li>
-			<li class="news-item">
-				<a class="news-item__link" href="#">
-					Проведение церемонии награждения в бишкекском филиале
-				</a>
-				<span class="news-item__date">2010-02-22</span>
-			</li>
-			<li class="news-item">
-				<a class="news-item__link" href="#">
-					Сотрудники иркутского филиала отметили китайский новый
-				</a>
-				<span class="news-item__date">2010-02-15</span>
-			</li>
-			<li class="news-item">
-				<a class="news-item__link" href="#">
-					Празднование китайского нового года в одесском филиале
-				</a>
-				<span class="news-item__date">2010-02-14</span>
-			</li>
+		<?php
+			require_once 'application/models/model_news.php';//подгрузка новостей
+
+      while ($row = mysqli_fetch_array($result_news_sidebar)) {
+        print('<li class="news-item">' . '<a class="news-item__link" href="/news-detail.php?id=' . $row['id'] . '">' . $row['header'] . '<span class="news-item__date">' . $row['date'] . '</span></a></li>');
+      }
+    ?>
 		</ul>
-		<span class="archive"><a class="archive__link" href="/news">Архив новостей</a></span>
+		<span class="archive"><a class="archive__link" href="/news.php">Архив новостей</a></span>
 	</section>
 </div>

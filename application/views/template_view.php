@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width">
-		<link rel="stylesheet" href="css/stylesheet.css">
 		<link rel="shortcut icon" href="img/favicon.png" type="image/png">
 		<link rel="alternate" href="https://allfont.ru/allfont.css?fonts=arial-narrow">
 		<title>Company - Интернет-магазин электронных сигарет</title>
+		<link rel="stylesheet" type="text/css" href="/css/stylesheet.css" />
 	</head>
 	<body>
 		<?php include 'application/views/includes/template_header.php'?>

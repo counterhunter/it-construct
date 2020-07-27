@@ -9,11 +9,11 @@
 			<nav class="footer-nav">
 				<ul class="footer-nav__list">
 					<li class="footer-nav__list-item"><span class="footer-nav__link">Главная</span></li>
-					<li class="footer-nav__list-item"><a class="footer-nav__link" href="/catalog">Каталог</a></li>
-					<li class="footer-nav__list-item"><a class="footer-nav__link" href="/about">О компании</a></li>
-					<li class="footer-nav__list-item"><a class="footer-nav__link" href="/news">Новости</a></li>
-					<li class="footer-nav__list-item"><a class="footer-nav__link" href="/shipment">Доставка и оплата</a></li>
-					<li class="footer-nav__list-item"><a class="footer-nav__link" href="/contacts">Контакты</a></li>
+					<li class="footer-nav__list-item"><a class="footer-nav__link" href="/catalog.php">Каталог</a></li>
+					<li class="footer-nav__list-item"><a class="footer-nav__link" href="/about.php">О компании</a></li>
+					<li class="footer-nav__list-item"><a class="footer-nav__link" href="/news.php">Новости</a></li>
+					<li class="footer-nav__list-item"><a class="footer-nav__link" href="/shipment.php">Доставка и оплата</a></li>
+					<li class="footer-nav__list-item"><a class="footer-nav__link" href="/contacts.php">Контакты</a></li>
 				</ul>
 			</nav>
 			<div class="developer">
