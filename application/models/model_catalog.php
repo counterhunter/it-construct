@@ -1,20 +1,45 @@
 <?php
 require_once './includes/config.php';
 
-$id = $_GET['id'];
+$cat_id = $_GET['id'];
+$price_from = $_GET['cost-from'];
+$price_to = $_GET['cost-to'];
+$page = $_GET['page'];
 
-$sql_catalog = 'SELECT * FROM product';
-$result_catalog = mysqli_query($link, $sql_catalog);
-// $sql = 'SELECT * FROM product WHERE cat_id ='.$id;
-// $result = mysqli_query($link, $sql);
-// $row = mysqli_fetch_assoc($result);
 
-// if (is_null($row['id'])) {
-//   $host = 'http://'.$_SERVER['HTTP_HOST'].'/';
-//   header('HTTP/1.1 404 Not Found');
-//   header("Status: 404 Not Found");
-//   header('Location:'.$host.'404');
-// }
-// else{ //почему нельзя без else?
-//   $result = mysqli_query($link, $sql);
-// }
+function exists($cat_id, $catalog_array){
+  foreach($catalog_array as $index => $value) {
+    if($value == $cat_id){
+      return true;
+    }
+  }
+  return false;
+}
+
+$sql = 'SELECT * FROM product ';
+
+if (!is_null($cat_id)){ //если есть категория
+  if(exists($cat_id, $catalog_array)){ //если такая категория существует
+    $sql = $sql.' WHERE cat_main='.$cat_id;
+    if (!is_null($price_from)){ //если есть нач. цена
+      $sql = $sql.' AND '.$price_from.' <= price';
+    }
+    if (!is_null($price_to)){ //если есть конечная цена
+      $sql = $sql.' AND '.' price <= '.$price_to ;
+    }
+  }
+  else{
+    $content_view = '404_view.php';
+  }
+}
+else{   //если нет категории
+  if (!is_null($price_from)){ //если есть нач. цена
+    $sql = $sql.' WHERE '.$price_from.' <= price';
+    if (!is_null($price_to)){ //если есть конечная цена
+      $sql = $sql.' AND '.' price <= '.$price_to;
+    }
+  }
+}
+
+$result_catalog = mysqli_query($link, $sql);
+

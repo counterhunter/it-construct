@@ -6,7 +6,14 @@
       <li class="bread-crumb bread-crumb_current">Каталог</li>
     </ul>
   </nav>
-  <form class="search-filter" id="catalog-page__search-filter-1" method="POST">
+  <form class="search-filter" id="catalog-page__search-filter-1" action="catalog.php" method="GET">
+    <?php
+    $id = $_GET['id'];
+    if(!is_null($id)){
+      print('<input type="number" name="id" style="visibility:hidden; position:absolute" value="'.$id.'">');
+    }
+      
+    ?>
     <span class="search-filter__item">
       <label class="search-filter__label" for="cost-from">Цена</label>
       <input class="search-filter__input" step="0.01" type="number" min="0" name="cost-from" id="cost-from" placeholder="от">
@@ -19,8 +26,13 @@
   </form>
   <ul class="categories categories__reposition">
     <?php
+      // проверка на пусто
+      if(mysqli_num_rows($result_catalog) == 0)
+      {
+        print('<p>Ничего не нашлось :(</p>');
+      }
       while ($row = mysqli_fetch_array($result_catalog)) {
-        print('<li class="category good-piece"><a class="category__link" href="product.php"> <img class="category__image good__image" src="' . $row['pic'] . '"><span class="category__name-container good_name"><span class="category__name-inner">' . $row['name'] . '</span></span></a><span class="good-price good_price">' . $row['price'] . ' <small class="good-price__currency">руб.</small></span></li>');
+        print('<li class="category good-piece"><a class="category__link" href="product.php?id=' . $row['id'] .'"> <img class="category__image good__image" src="' . $row['pic'] . '"><span class="category__name-container good_name"><span class="category__name-inner">' . $row['name'] . '</span></span></a><span class="good-price good_price">' . $row['price'] . ' <small class="good-price__currency">руб.</small></span></li>');
       }
     ?>
   </ul>

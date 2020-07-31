@@ -4,11 +4,11 @@ require_once './includes/config.php';
 $id = $_GET['id'];
 $not_found=true;
 
-foreach($news_array as $index => $value) {
+foreach($product_array as $index => $value) {
   if($value == $id){
     $not_found=false;
-    $sql = 'SELECT * FROM news WHERE id ='.$id;
-    $result_news_detail = mysqli_query($link, $sql);
+    $sql = 'SELECT * FROM product WHERE id ='.$id;
+    $result_product = mysqli_query($link, $sql);
   break;
   }
 }

@@ -21,9 +21,28 @@
 		<div class="wrapper">
 			<span class="menu-toggler">Меню</span>
 			<ul class="menu-togglable">
-				<li class="header-nav-item"><span><span class="header-nav-item__link header-nav-item__link_current">Главная</span></span></li>
 				<li class="header-nav-item">
-					<span class="header-nav-item__container-for-link"><a class="header-nav-item__link" href="/catalog.php">Каталог</a></span>
+					<span>
+						<?php
+						if ($_SERVER['REQUEST_URI'] == '/'){
+							print('<span class="header-nav-item__link header-nav-item__link_current">Главная</span>');
+						}
+						else{
+							print('<a class="header-nav-item__link" href="/">Главная</a>');
+						}
+						?>
+					</span>
+				</li>
+				<li class="header-nav-item">
+					<span class="header-nav-item__container-for-link"><?php
+						if ($_SERVER['REQUEST_URI'] == '/catalog.php'){
+							print('<span class="header-nav-item__link header-nav-item__link_current">Каталог</span>');
+						}
+						else{
+							print('<a class="header-nav-item__link" href="/catalog.php">Каталог</a>');
+						}
+						?>
+					</span>
 					<ul class="sub-menu">
 						<li class="sub-menu__list-item"><a class="sub-menu__link" href="#">Электронные сигареты</a></li>
 						<li class="sub-menu__list-item"><a class="sub-menu__link" href="#">Трубки</a></li>
@@ -35,10 +54,54 @@
 						<li class="sub-menu__list-item"><a class="sub-menu__link" href="#">Подарочные наборы</a></li>
 					</ul>
 				</li>
-				<li class="header-nav-item"><span><a class="header-nav-item__link" href="/about.php">О компании</a></span></li>
-				<li class="header-nav-item"><span><a class="header-nav-item__link" href="/news.php">Новости</a></span></li>
-				<li class="header-nav-item"><span><a class="header-nav-item__link" href="/shipment.php">Доставка и оплата</a></span></li>
-				<li class="header-nav-item"><span><a class="header-nav-item__link" href="/contacts.php">Контакты</a></span></li>
+				<li class="header-nav-item">
+					<span>
+						<?php
+						if ($_SERVER['REQUEST_URI'] == '/about.php'){
+							print('<span class="header-nav-item__link header-nav-item__link_current">О компании</span>');
+						}
+						else{
+							print('<a class="header-nav-item__link" href="/about.php">О компании</a>');
+						}
+						?>
+					</span>
+				</li>
+				<li class="header-nav-item">
+					<span>
+						<?php
+						if ($_SERVER['REQUEST_URI'] == '/news.php'){
+							print('<span class="header-nav-item__link header-nav-item__link_current">Новости</span>');
+						}
+						else{
+							print('<a class="header-nav-item__link" href="/news.php">Новости</a>');
+						}
+						?>
+					</span>
+				</li>
+				<li class="header-nav-item">
+					<span>	
+						<?php
+						if ($_SERVER['REQUEST_URI'] == '/shipment.php'){
+							print('<span class="header-nav-item__link header-nav-item__link_current">Доставка и оплата</span>');
+						}
+						else{
+							print('<a class="header-nav-item__link" href="/shipment.php">Доставка и оплата</a>');
+						}
+						?>
+					</span>
+				</li>
+				<li class="header-nav-item">
+					<span>	
+						<?php
+						if ($_SERVER['REQUEST_URI'] == '/contacts.php'){
+							print('<span class="header-nav-item__link header-nav-item__link_current">Контакты</span>');
+						}
+						else{
+							print('<a class="header-nav-item__link" href="/contacts.php">Контакты</a>');
+						}
+						?>
+					</span>
+				</li>
 			</ul>
 		</div>
 	</nav>

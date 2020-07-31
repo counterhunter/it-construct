@@ -2,54 +2,13 @@
 <main class="categories">
 	<h1 class="invisible">Company - Электронные сигареты</h1>
 	<ul class="categories">
-		<li class="category">
-			<a class="category__link" href="#">
-				<img class="category__image" src="img/category-1.jpg" alt="category-image-1">
-				<span class="category__name-container"><span class="category__name-inner">Электронные сигареты</span></span>
-			</a>
-		</li>
-		<li class="category">
-			<a class="category__link" href="#">
-				<img class="category__image" src="img/category-2.jpg" alt="category-image-2">
-				<span class="category__name-container"><span class="category__name-inner">Трубки</span></span>
-			</a>
-		</li>
-		<li class="category">
-			<a class="category__link" href="#">
-				<img class="category__image" src="img/category-3.jpg" alt="category-image-3">
-				<span class="category__name-container"><span class="category__name-inner">Жидкости для заправки</span></span>
-			</a>
-		</li>
-		<li class="category">
-			<a class="category__link" href="#">
-				<img class="category__image" src="img/category-4.jpg" alt="category-image-4">
-				<span class="category__name-container"><span class="category__name-inner">Аккумуляторы и атомайзеры</span></span>
-			</a>
-		</li>
-		<li class="category">
-			<a class="category__link" href="#">
-				<img class="category__image" src="img/category-5.jpg" alt="category-image-5">
-				<span class="category__name-container"><span class="category__name-inner">Картриджи</span></span>
-			</a>
-		</li>
-		<li class="category">
-			<a class="category__link" href="#">
-				<img class="category__image" src="img/category-6.jpg" alt="category-image-6">
-				<span class="category__name-container"><span class="category__name-inner">Зарядные устройства</span></span>
-			</a>
-		</li>
-		<li class="category">
-			<a class="category__link" href="#">
-				<img class="category__image" src="img/category-7.jpg" alt="category-image-7">
-				<span class="category__name-container"><span class="category__name-inner">Аксессуары</span></span>
-			</a>
-		</li>
-		<li class="category">
-			<a class="category__link" href="#">
-				<img class="category__image" src="img/category-8.jpg" alt="category-image-1">
-				<span class="category__name-container"><span class="category__name-inner">Подарочные наборы</span></span>
-			</a>
-		</li>
+	<?php
+		require_once 'application/models/model_categories.php';//подгрузка категорий
+
+		while ($row = mysqli_fetch_array($result_categories)) {
+			print('<li class="category"><a class="category__link" href="/catalog.php?id=' . $row['id'] . '"><img class="category__image" src="' . $row['pic'] . '" alt="category-image"><span class="category__name-container"><span class="category__name-inner">'. $row['name'] . '</span></span></a></li>');
+		}
+	?>
 	</ul>
 </main>
 <article class="seo-article">

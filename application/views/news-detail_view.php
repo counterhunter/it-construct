@@ -8,9 +8,9 @@
   <article class="news-detail-article">
   <p>
   <?php
-    while ($item = mysqli_fetch_array($result)) {
+    while ($item = mysqli_fetch_array($result_news_detail)) {
       print($item['date'] . '</p><h1>' . $item['header'] . '</h1><p>' .  $item['preview'] . '</p><p>' . $item['text'] . '</p>');
     }
-    ?>
+  ?>
   </article>
 </main>
