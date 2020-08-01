@@ -14,7 +14,6 @@
 			</div>
 		</aside>
 		<div class="user-info">
-			
 		</div>
 	</div>
 	<nav class="header-nav">
@@ -39,7 +38,7 @@
 							print('<span class="header-nav-item__link header-nav-item__link_current">Каталог</span>');
 						}
 						else{
-							print('<a class="header-nav-item__link" href="/catalog.php">Каталог</a>');
+							print('<a class="header-nav-item__link" href="/catalog.php?page=1">Каталог</a>');
 						}
 						?>
 					</span>

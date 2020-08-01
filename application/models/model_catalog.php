@@ -5,6 +5,7 @@ $cat_id = $_GET['id'];
 $price_from = $_GET['cost-from'];
 $price_to = $_GET['cost-to'];
 $page = $_GET['page'];
+$page_count = 0;
 
 
 function exists($cat_id, $catalog_array){
@@ -43,3 +44,4 @@ else{   //если нет категории
 
 $result_catalog = mysqli_query($link, $sql);
 
+$page_count = ceil(mysqli_num_rows($result_catalog) / MAX_PRODUCT_COUNT);

@@ -24,7 +24,7 @@
 						print('<span class="footer-nav__link"">Каталог</span>');
 					}
 					else{
-						print('<a class="footer-nav__link" href="/catalog.php">Каталог</a>');
+						print('<a class="footer-nav__link" href="/catalog.php?page=1">Каталог</a>');
 					}
 					?>
 				</li>

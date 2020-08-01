@@ -12,6 +12,7 @@
     if(!is_null($id)){
       print('<input type="number" name="id" style="visibility:hidden; position:absolute" value="'.$id.'">');
     }
+    
       
     ?>
     <span class="search-filter__item">
@@ -37,13 +38,31 @@
     ?>
   </ul>
   <ul class="paginator catalog-page__paginator">
-    <li class="paginator__elem"><a href="#" class="paginator__link">1</a></li>
-    <li class="paginator__elem"><a href="#" class="paginator__link">2</a></li>
+    <!-- <li class="paginator__elem"><a href="/catalog.php?page=1" class="paginator__link">1</a></li> -->
+
+    <?php
+      $page = $_GET['page'];
+      // if(!is_null($page)){
+      //   print(' page='.$page);
+      // }
+      $i = 1;
+      while ($i <= $page_count) {
+        if($page == $i)
+        {
+          print('<li class="paginator__elem paginator__elem_current"><span class="paginator__link">'.$i.'</span></li>');
+        }
+        else{
+          print('<li class="paginator__elem"><a href="?page='.$i.'" class="paginator__link">'.$i.'</a></li>');
+        }
+        $i++;
+      }
+    ?>
+    <!-- <li class="paginator__elem"><a href="#" class="paginator__link">2</a></li>
     <li class="paginator__elem"><a href="#" class="paginator__link">3</a></li>
     <li class="paginator__elem paginator__elem_current"><span class="paginator__link">4</span></li>
     <li class="paginator__elem"><a href="#" class="paginator__link">5</a></li>
     <li class="paginator__elem"><a href="#" class="paginator__link">6</a></li>
-    <li class="paginator__elem"><a href="#" class="paginator__link">7</a></li>
+    <li class="paginator__elem"><a href="#" class="paginator__link">7</a></li> -->
     <li class="paginator__elem paginator__elem_next"><a href="#" class="paginator__link">Следующая страница</a></li>
   </ul>
 </main>
