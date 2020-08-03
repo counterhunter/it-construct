@@ -1,5 +1,6 @@
 <?php
 require_once './includes/config.php';
+require_once './includes/dbconn.php';
 
 $name = $_POST['feedback-author'];
 $email = $_POST['email'];

@@ -10,10 +10,8 @@
     <?php
     $id = $_GET['id'];
     if(!is_null($id)){
-      print('<input type="number" name="id" style="visibility:hidden; position:absolute" value="'.$id.'">');
+      print('<input type="hidden" name="id" value="'.$id.'">');
     }
-    
-      
     ?>
     <span class="search-filter__item">
       <label class="search-filter__label" for="cost-from">Цена</label>

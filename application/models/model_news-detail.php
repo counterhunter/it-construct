@@ -1,5 +1,6 @@
 <?php
 require_once './includes/config.php';
+require_once './includes/dbconn.php';
 
 $id = $_GET['id'];
 $not_found=true;
@@ -9,6 +10,7 @@ foreach($news_array as $index => $value) {
     $not_found=false;
     $sql = 'SELECT * FROM news WHERE id ='.$id;
     $result_news_detail = mysqli_query($link, $sql);
+    $result_news_detail_title = mysqli_query($link, $sql);
   break;
   }
 }

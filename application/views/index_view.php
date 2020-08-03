@@ -3,9 +3,7 @@
 	<h1 class="invisible">Company - Электронные сигареты</h1>
 	<ul class="categories">
 	<?php
-		require_once 'application/models/model_categories.php';//подгрузка категорий
-
-		while ($row = mysqli_fetch_array($result_categories)) {
+		while ($row = mysqli_fetch_array($categories)) {
 			print('<li class="category"><a class="category__link" href="/catalog.php?id=' . $row['id'] . '"><img class="category__image" src="' . $row['pic'] . '" alt="category-image"><span class="category__name-container"><span class="category__name-inner">'. $row['name'] . '</span></span></a></li>');
 		}
 	?>

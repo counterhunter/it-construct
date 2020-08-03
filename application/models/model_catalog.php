@@ -1,5 +1,6 @@
 <?php
 require_once './includes/config.php';
+require_once './includes/dbconn.php';
 
 $cat_id = $_GET['id'];
 $price_from = $_GET['cost-from'];

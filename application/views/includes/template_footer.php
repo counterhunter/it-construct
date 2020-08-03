@@ -10,7 +10,7 @@
 			<ul class="footer-nav__list">
 				<li class="footer-nav__list-item">
 					<?php
-					if ($_SERVER['REQUEST_URI'] == '/'){
+					if ($uri == '/'){
 						print('<span class="footer-nav__link"">Главная</span>');
 					}
 					else{
@@ -20,7 +20,7 @@
 				</li>
 				<li class="footer-nav__list-item">
 					<?php
-					if ($_SERVER['REQUEST_URI'] == '/catalog.php'){
+					if ($uri_parts[0] == '/catalog.php'){
 						print('<span class="footer-nav__link"">Каталог</span>');
 					}
 					else{
@@ -30,7 +30,7 @@
 				</li>
 				<li class="footer-nav__list-item">
 					<?php
-					if ($_SERVER['REQUEST_URI'] == '/about.php'){
+					if ($uri == '/about.php'){
 						print('<span class="footer-nav__link"">О компании</span>');
 					}
 					else{
@@ -40,7 +40,7 @@
 				</li>
 				<li class="footer-nav__list-item">
 					<?php
-					if ($_SERVER['REQUEST_URI'] == '/news.php'){
+					if ($uri == '/news.php'){
 						print('<span class="footer-nav__link"">Новости</span>');
 					}
 					else{
@@ -50,7 +50,7 @@
 				</li>
 				<li class="footer-nav__list-item">
 					<?php
-					if ($_SERVER['REQUEST_URI'] == '/shipment.php'){
+					if ($uri == '/shipment.php'){
 						print('<span class="footer-nav__link"">Доставка и оплата</span>');
 					}
 					else{
@@ -60,7 +60,7 @@
 				</li>
 				<li class="footer-nav__list-item">
 					<?php
-					if ($_SERVER['REQUEST_URI'] == '/contacts.php'){
+					if ($uri == '/contacts.php'){
 						print('<span class="footer-nav__link"">Контакты</span>');
 					}
 					else{

@@ -3,7 +3,7 @@
 		<h2 class="sidebar__headline">Каталог</h2>
 		<ul class="catalog-list">
 			<?php
-				while ($row = mysqli_fetch_array($result_categories_sidebar)) {
+				while ($row = mysqli_fetch_array($categories_sidebar)) {
 					print('<li class="catalog-list__item"><a class="catalog-list__link" href="/catalog.php?id=' . $row['id'] . '">' . $row['name'] . '</a></li>');
 				}
     	?>
